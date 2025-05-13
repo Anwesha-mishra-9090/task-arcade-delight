@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				todo: {
+					purple: '#9b87f5',
+					'dark-purple': '#7E69AB',
+					'light-purple': '#E5DEFF',
+					green: '#4CAF50',
+					yellow: '#FFC107',
+					red: '#FF5252',
 				}
 			},
 			borderRadius: {
@@ -84,11 +93,32 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'task-complete': {
+					'0%': { transform: 'scale(1)' },
+					'50%': { transform: 'scale(1.05)' },
+					'100%': { transform: 'scale(1)' }
+				},
+				'task-add': {
+					'0%': { opacity: '0', transform: 'translateY(10px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'task-delete': {
+					'0%': { opacity: '1', transform: 'translateX(0)' },
+					'100%': { opacity: '0', transform: 'translateX(-10px)' }
+				},
+				'fade': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'task-complete': 'task-complete 0.3s ease-in-out',
+				'task-add': 'task-add 0.3s ease-out',
+				'task-delete': 'task-delete 0.3s ease-out',
+				'fade': 'fade 0.3s ease-in'
 			}
 		}
 	},
